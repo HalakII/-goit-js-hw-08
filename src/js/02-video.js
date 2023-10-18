@@ -8,7 +8,7 @@ const player = new Player(iframe);
 
 const onPlay = function (event) {
   localStorage.setItem(VCT_KEY, event.seconds);
-  console.log(event);
+  //   console.log(event.seconds);
 };
 
 player.on('timeupdate', throttle(onPlay, 1000));
@@ -18,7 +18,9 @@ const currentTime = JSON.parse(localStorage.getItem(VCT_KEY));
 // console.log(typeof currentTime);
 
 player.setCurrentTime(currentTime);
-//   .then(function (seconds) {})
+//   .then(function (seconds) {
+//     console.log(currentTime, seconds);
+//   })
 //   .catch(function (error) {
 //     switch (error.name) {
 //       case 'RangeError':
