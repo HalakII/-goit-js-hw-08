@@ -21,7 +21,7 @@ function onInputFocus(event) {
   persistedFoormData = persistedFoormData ? JSON.parse(persistedFoormData) : {};
   persistedFoormData[event.target.name] = event.target.value;
   localStorage.setItem(FFS_KEY, JSON.stringify(persistedFoormData));
-  console.log(event.target);
+  //   console.log(event.target);
 }
 
 function pageReload() {
@@ -32,5 +32,5 @@ function pageReload() {
       feedbackFormEl.elements[name].value = value;
     });
   }
-  console.log(persistedFoormData);
+  //   console.log(persistedFoormData);
 }
