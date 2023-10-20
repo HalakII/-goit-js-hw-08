@@ -13,22 +13,22 @@ const onPlay = function (event) {
 
 player.on('timeupdate', throttle(onPlay, 1000));
 
-// const currentTime = localStorage.getItem(VCT_KEY);
-const currentTime = JSON.parse(localStorage.getItem(VCT_KEY));
-// console.log(typeof currentTime);
+// const currentTime = JSON.parse(localStorage.getItem(VCT_KEY));
+// if (currentTime !== null) {
+//   player
+//     .setCurrentTime(currentTime)
+//     .then(function (seconds) {
+//       console.log(seconds);
+//     })
+//     .catch(function (error) {
+//       switch (error.name) {
+//         case 'RangeError':
+//           break;
+//         default:
+//           break;
+//       }
+//     });
+// }
 
-player.setCurrentTime(currentTime);
-//   .then(function (seconds) {
-//     console.log(currentTime, seconds);
-//   })
-//   .catch(function (error) {
-//     switch (error.name) {
-//       case 'RangeError':
-//         break;
-
-//       default:
-//         break;
-//     }
-//   });
-// player.setCurrentTime(currentTime || 0);
-// console.log(currentTime);
+// або так!!!
+player.setCurrentTime(JSON.parse(localStorage.getItem(VCT_KEY)) || 0);

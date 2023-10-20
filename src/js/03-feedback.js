@@ -9,7 +9,13 @@ feedbackFormEl.addEventListener('input', throttle(onInputFocus, 500));
 function onFormSubmit(event) {
   event.preventDefault();
   const formData = new FormData(feedbackFormEl);
-  formData.forEach((value, name) => console.log(value, name));
+  // console.log(formData);
+  const dataObj = {};
+  formData.forEach((value, name) => {
+    dataObj[name] = value;
+  });
+  console.log(dataObj);
+
   if (localStorage.getItem(FFS_KEY)) {
     localStorage.removeItem(FFS_KEY);
   }
@@ -32,5 +38,7 @@ function pageReload() {
       feedbackFormEl.elements[name].value = value;
     });
   }
-  //   console.log(persistedFoormData);
+  // console.log(persistedFoormData);
 }
+
+// 127yuuh@loce.htp
